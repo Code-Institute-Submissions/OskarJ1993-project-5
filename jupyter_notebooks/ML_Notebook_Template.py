@@ -58,3 +58,11 @@ y_pred = model.predict(X_test)
 mse = mean_squared_error(y_test, y_pred)
 mae = mean_absolute_error(y_test, y_pred)
 r2 = r2_score(y_test, y_pred)
+
+# Display evaluation results
+print("Mean Squared Error (MSE):", mse)
+print("Mean Absolute Error (MAE):", mae)
+print("R-squared (R2):", r2)
+
+
+pickle.dump(model, open("outputs/lin_reg_model.pkl", "wb"))
