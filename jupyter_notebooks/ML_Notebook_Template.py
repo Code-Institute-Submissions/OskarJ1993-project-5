@@ -13,3 +13,14 @@ data.head()
 # Prepare the data
 data = data.dropna(subset=["SalePrice"])
 data = data.loc[data["SalePrice"].notna()]
+
+# Select the features
+features = ["LotArea", "YearBuilt", "OverallQual", "GrLivArea"]
+
+# List of variables that correlate to SalePrice
+# Inspect data
+data[features].head()
+
+# Correlation Study Summary
+correlation_matrix = data[features].corr()
+print(correlation_matrix)
