@@ -44,3 +44,17 @@ y = data["SalePrice"]
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.25, random_state=42
 )
+
+# Train the model
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+
+# Predict on the test set
+y_pred = model.predict(X_test)
+
+
+# Calculate evaluation metrics
+mse = mean_squared_error(y_test, y_pred)
+mae = mean_absolute_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
